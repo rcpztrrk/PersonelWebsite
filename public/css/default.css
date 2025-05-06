@@ -1,0 +1,24 @@
+*{
+    box-sizing: 0;
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+width: 100%;
+height: auto;
+min-height: 100vh;
+background-color: #efefef;
+}
+
+img video{
+width: 100%;
+}
+a,a::after,a::before,a:active,a:link{
+    color: black;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
