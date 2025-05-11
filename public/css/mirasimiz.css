@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+
+body {
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #e6f4ea; /* Hafif yeşil ton */
+    text-align: center;
+}
+
+/* -------- HEADER -------- */
+.miras-header {
+    background-color: #2e7d32; /* Derin yeşil */
+    color: white;
+    padding: 30px;
+}
+
+.miras-header h1 {
+    font-size: 36px;
+}
+
+.miras-header p {
+    font-size: 18px;
+}
+
+/* -------- HERİTAGE BÖLÜMÜ -------- */
+.heritage {
+    margin: 40px auto;
+    padding: 20px;
+    width: 80%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 100, 0, 0.2);
+}
+
+.heritage-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.heritage-item {
+    width: 250px;
+    text-align: center;
+}
+
+.heritage-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.heritage-item h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #388e3c; /* Orta ton yeşil */
+}
+
+.heritage-item p {
+    font-size: 16px;
+    color: #2e7d32;
+}
+
+/* -------- KÜLTÜR BÖLÜMÜ -------- */
+.culture {
+    margin: 40px auto;
+    padding: 20px;
+    width: 80%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 100, 0, 0.2);
+}
+
+.culture h2 {
+    font-size: 28px;
+    color: #388e3c;
+}
+
+.culture p {
+    font-size: 18px;
+    color: #2e7d32;
+    line-height: 1.6;
+}
+
+/* -------- FOOTER -------- */
+footer {
+    padding: 20px;
+    background-color: #2e7d32;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* -------- BUTON STİLİ -------- */
+.links {
+    margin: 40px auto;
+    text-align: center;
+}
+
+.links a {
+    display: inline-block;
+    font-size: 22px; /* Yazıyı büyüttük */
+    font-weight: bold;
+    color: white;
+    background-color: #0d6efd; /* Şık mavi ton */
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.links a:hover {
+    background-color: #0048aa; /* Hover efekti */
+    transform: scale(1.1); /* Buton büyüme efekti */
+}
+

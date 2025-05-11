@@ -1,0 +1,21 @@
+.linkss {
+    margin: 40px auto;
+    text-align: center;
+}
+
+.linkss a {
+    display: inline-block;
+    font-size: 22px; /* Yazıyı büyüttük */
+    font-weight: bold;
+    color: white;
+    background-color: #0d6efd; /* Şık mavi ton */
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.linkss a:hover {
+    background-color: #0048aa; /* Hover efekti */
+    transform: scale(1.1); /* Buton büyüme efekti */
+}
