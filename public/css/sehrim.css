@@ -11,13 +11,49 @@ body {
   background-color: #1e6f5c;
   color: white;
   padding: 20px 0;
-  text-align: center;
+  text-align: start;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
   margin: 0;
   font-size: 2em;
+}
+
+/* -------- NÜFUS TABLOSU -------- */
+.population {
+    margin: 40px auto;
+    padding: 20px;
+    width: 80%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 100, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #2e7d32;
+    text-align: left;
+}
+
+th {
+    background-color: #388e3c;
+    color: white;
+}
+
+/* -------- HARİTA -------- */
+.map {
+    margin: 40px auto;
+    padding: 20px;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 100, 0, 0.2);
 }
 
 /* Ana içerik alanı */
@@ -32,7 +68,7 @@ main {
 .nufus,
 .gezilecek-yerler {
   background-color: #ffffff;
-  padding: 20px;
+  padding: 80px;
   margin-bottom: 20px;
   border-radius: 8px;
   border-left: 5px solid #1e6f5c;
@@ -64,19 +100,39 @@ main {
 /* İleri ve geri butonları */
 .prev, .next {
   cursor: pointer;
-  position: absolute;
+  position: absolute; /* Butonları kaymasını önleyerek sabitler */
   top: 50%;
+  transform: translateY(-50%); /* Dikey ortalama */
   width: auto;
-  margin-top: -22px;
-  padding: 16px;
+  margin-top: 0;
+  padding: 15px;
   color: white;
   font-weight: bold;
   font-size: 18px;
-  transition: 0.6s ease;
+  transition: 0.3s ease-in-out;
   border-radius: 5px;
   user-select: none;
   background-color: #2e7d32; /* Yeşil ton */
 }
+
+/* Sol buton */
+.prev {
+  left: 1px;
+}
+
+/* Sağ buton */
+.next {
+  right: 1px;
+}
+
+/* Mobil uyum için */
+@media (max-width: 768px) {
+  .prev, .next {
+    font-size: 14px; /* Küçük ekranlarda butonlar daha küçük olacak */
+    padding: 12px;
+  }
+}
+
 
 /* "Sonraki" butonunu sağa hizala */
 .next {

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+.navbar-container {
+    position: fixed;  /* Sayfanın en üstüne sabitle */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000; /* Üstte kalmasını sağla */
+}
+
+/* Sayfa içeriğini aşağı kaydırmak için */
+body {
+    padding-top: 60px; /* Navbar yüksekliği kadar boşluk bırak */
+}
+
+/* Navbar iç düzeni */
+.navbar-container .container {
+    display: flex;
+    justify-content: center; /* Sol logo, sağ menü */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* NAVBAR MENÜ */
+.navbar-container nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-container nav li {
+    margin-left: 20px;
+}
+
+.navbar-container nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    transition: color 0.3s ease-in-out, transform 0.2s;
+}
+
+.navbar-container nav a:hover {
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Mobil uyum için */
+@media (max-width: 768px) {
+    .navbar-container .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar-container nav ul {
+        flex-direction: column;
+        align-items: center; /* Menü ortalanmasın */
+        margin-top: 10px;
+    }
+
+    .navbar-container nav li {
+        margin: 8px 0;
+    }
+
+    .navbar-container nav a {
+        font-size: 18px; /* Mobilde daha okunaklı olsun */
+    }
+}

@@ -1,59 +1,86 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-
-.ozgecmiss body {
-    font-family: "Josefin Sans", sans-serif;
-    background-color: #f4f4f4;
+/* -------- SADECE CV SAYFASINA ÖZEL -------- */
+.cv-page {
+   
+    background:  #0d4e28; /* Yeşil tema */
+    color: white;
     text-align: center;
+    padding: 40px;
 }
 
 /* -------- HEADER -------- */
 .cv-header {
-    background-color: #0d6efd;
+    background: #0d532a;
     color: white;
     padding: 30px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.cv-header h1 {
-    font-size: 36px;
-}
-
-.cv-header p {
-    font-size: 18px;
-}
-
-/* -------- GENEL BÖLÜMLER -------- */
-.ozgecmiss section {
+/* -------- CV SAYFASINDAKİ BÖLÜMLER -------- */
+.cv-content section {
     margin: 40px auto;
     padding: 40px;
     width: 80%;
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    color: black;
 }
 
-h2 {
-    font-size: 28px;
-    color: #0d6efd;
+/* Navbar'a özel stil eklenmesin */
+
+
+.cv-content section:hover {
+    transform: scale(1.02);
 }
 
-ul {
+/* -------- BAŞLIKLAR -------- */
+.cv-content h2 {
+    font-size: 30px;
+    color: #1e8449;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* -------- LİSTELER -------- */
+.cv-content ul {
     list-style-type: none;
     padding: 0;
 }
 
-ul li {
+.cv-content ul li {
     font-size: 18px;
     margin: 8px 0;
+    padding: 10px;
+    background-color: #d5f5e3;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
-/* -------- İLETİŞİM -------- */
-.contact a {
-    color: #0d6efd;
+.cv-content ul li:hover {
+    background-color: #b8e994;
+}
+
+/* -------- İLETİŞİM BİLGİLERİ -------- */
+.cv-content .contact a {
+    color: #1e8449;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-.contact a:hover {
+.cv-content .contact a:hover {
     text-decoration: underline;
+    color: #145a32;
 }

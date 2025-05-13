@@ -4,14 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Şehrim: Bursa</title>
-  <link rel="stylesheet" href="public/css/sehrim.css">
+  <link rel="stylesheet" href="public/css/index.css">
 </head>
 <body>
 
-<header class="hsehrim">
-
-  <h1>Şehrim: Bursa</h1>
+  <header class="navbar-container">
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="sehrim.html">Şehrim</a></li>
+                <li><a href="ozgecmis.html">Öz Geçmiş</a></li>
+                <li><a href="ilgialanım.html">İlgi Alanlarım</a></li>
+                <li><a href="giris.html">Giriş Yap</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
+
+
 
 <main>
   <section class="genel-bilgiler">
@@ -19,11 +31,47 @@
     <p>Bursa, Türkiye'nin Marmara Bölgesi'nde yer alır ve Osmanlı'nın ilk başkentidir. "Yeşil Bursa" olarak bilinir.</p>
   </section>
 
-  <section class="nufus">
-    <h2>Nüfus</h2>
-    <p>2024 yılı verilerine göre nüfusu yaklaşık 3.2 milyondur ve Türkiye'nin en kalabalık 4. şehridir.</p>
-  </section>
+  <section class="population">
+        <h2>📊 Nüfus Bilgileri</h2>
+        <table>
+            <tr>
+                <th>İlçe</th>
+                <th>Nüfus</th>
+                <th>Öne Çıkan Özellik</th>
+            </tr>
+            <tr>
+                <td>Osmangazi</td>
+                <td>900.000</td>
+                <td>Tarihî yapıların merkezi</td>
+            </tr>
+            <tr>
+                <td>Yıldırım</td>
+                <td>650.000</td>
+                <td>Yeşil Türbe ve Yeşil Cami</td>
+            </tr>
+            <tr>
+                <td>Nilüfer</td>
+                <td>500.000</td>
+                <td>Modern yaşam alanları</td>
+            </tr>
+            <tr>
+                <td>Gemlik</td>
+                <td>110.000</td>
+                <td>Deniz ve zeytin üretimi</td>
+            </tr>
+        </table>
+    </section>
+<section class="map">
+        <h2>Bursa'nın Haritası</h2>
+       <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77396.84783921208!2d28.848479550341668!3d40.18480538325079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca3f1845ef7e21%3A0xa15a2c7a227e3d74!2sBursa!5e0!3m2!1str!2sus!4v1688039412340" 
+    width="100%" height="700" style="border:0;" 
+    allowfullscreen="" loading="lazy">
+</iframe>
 
+
+
+    </section>
  
 
   <div class="slideshow-container">
@@ -32,28 +80,29 @@
   <div class="mySlides fade">
     <div class="numbertext">1 / 4</div>
     <img src="public/img/ulucami.jpg" style="width:100%">
-    <div class="text">Ulucami - Osmanlı'nın İlk Büyük Camisi</div>
+    <div class="text">Ulucami - Osmanlı'nın İlk Büyük Camisi.
+      1399 yılında yapılmış olup Osmanlı cami mimarisinin en önemli örneklerinden biridir.</div>
   </div>
 
   <!-- Uludağ -->
   <div class="mySlides fade">
     <div class="numbertext">2 / 4</div>
     <img src="public/img/uludag.jpg" style="width:100%">
-    <div class="text">Uludağ - Türkiye'nin En Ünlü Kayak Merkezi</div>
+    <div class="text">Uludağ - Türkiye'nin En Ünlü Kayak Merkezi.Türkiye'nin en popüler kayak merkezlerinden biri olup dört mevsim doğa turizmine uygundur.</div>
   </div>
 
   <!-- Cumalıkızık -->
   <div class="mySlides fade">
     <div class="numbertext">3 / 4</div>
     <img src="public/img/cumalikizik.jpg" style="width:100%">
-    <div class="text">Cumalıkızık - Osmanlı’dan Günümüze Gelen Köy</div>
+    <div class="text">Cumalıkızık - Osmanlı’dan Günümüze Gelen Köy.UNESCO Dünya Mirası listesinde yer alan, Osmanlı döneminden kalma bir köydür.</div>
   </div>
 
   <!-- Kozahan -->
   <div class="mySlides fade">
     <div class="numbertext">4 / 4</div>
     <img src="public/img/kozahan.jpg" style="width:100%">
-    <div class="text"> Kozahan - Tarihî İpek Yolu'nun Ticaret Merkezi</div>
+    <div class="text"> Kozahan - Tarihî İpek Yolu'nun Ticaret Merkezi.İpek ticaretinin merkezi olan tarihi bir handır, günümüzde turistik alışveriş noktasıdır.</div>
   </div>
 
   <!-- Önceki / Sonraki Butonlar -->
@@ -71,33 +120,15 @@
 </div>
 
 
+<div class="linkss">
+    <a href="mirasimiz.html">Mirasımız</a>
+</div>
 
 
-
-  <div class="content-section" id="ulucami">
-    <h3>Ulu Camii</h3>
-    <p>1399 yılında yapılmış olup Osmanlı cami mimarisinin en önemli örneklerinden biridir.</p>
-  </div>
-
-  <div class="content-section" id="uludag">
-    <h3>Uludağ</h3>
-    <p>Türkiye'nin en popüler kayak merkezlerinden biri olup dört mevsim doğa turizmine uygundur.</p>
-  </div>
-
-  <div class="content-section" id="cumalikizik">
-    <h3>Cumalıkızık</h3>
-    <p>UNESCO Dünya Mirası listesinde yer alan, Osmanlı döneminden kalma bir köydür.</p>
-  </div>
-
-  <div class="content-section" id="kozahan">
-    <h3>Koza Han</h3>
-    <p>İpek ticaretinin merkezi olan tarihi bir handır, günümüzde turistik alışveriş noktasıdır.</p>
-  </div>
+  
 </main>
 
-    <footer>
-        <a href="index.html">Ana Sayfaya Dön</a>
-    </footer>
+
 
 <script src="public/js/slider.js"></script>
 </body>

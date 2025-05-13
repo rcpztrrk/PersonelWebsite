@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+.ilgi-alanlarim {
+    
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    
+}
+
+/* HEADER */
+.ilgi-alanlarim .games-header {
+    background-color: #0d6efd;
+    padding: 60px;
+}
+
+.ilgi-alanlarim .games-header h1 {
+    font-size: 36px;
+    text-align: center;
+    top: 60px;
+}
+
+/* Oyun Listesi */
+.ilgi-alanlarim .game-list {
+    margin: 50px auto;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Oyunları Yatayda Dizmek */
+.ilgi-alanlarim #games {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex; /* Soldan sağa dizme */
+    padding: 2px;
+}
+
+/* Oyun Kartı */
+.ilgi-alanlarim .game-item {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    width: 200px; /* Kartları daraltıyoruz */
+    transition: transform 0.3s ease-in-out;
+}
+
+.ilgi-alanlarim .game-item:hover {
+    transform: scale(1.05);
+}
+
+/* Oyun Resmi */
+.ilgi-alanlarim .game-item img {
+    width: 100%;
+    height: 120px; /* Daha kompakt hale getiriyoruz */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Oyun İsmi */
+.ilgi-alanlarim .game-item h3 {
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+/* Oyun Bilgileri */
+.ilgi-alanlarim .game-item p {
+    font-size: 14px;
+    color: #bbb;
+}
