@@ -3,7 +3,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fdfdfd;
+  background-color: #121212;
 }
 
 /* Üst başlık alanı */
@@ -25,9 +25,9 @@ header h1 {
     margin: 40px auto;
     padding: 20px;
     width: 80%;
-    background-color: white;
+    background-color: rgb(110, 110, 110);
     border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 100, 0, 0.2);
+    box-shadow: 0px 4px 6px rgba(0, 99, 0, 0.2);
 }
 
 table {
@@ -37,7 +37,7 @@ table {
 
 th, td {
     padding: 12px;
-    border: 1px solid #2e7d32;
+    border: 1px solid #00ff0d;
     text-align: left;
 }
 
@@ -51,7 +51,7 @@ th {
     margin: 40px auto;
     padding: 20px;
     width: 100%;
-    background-color: white;
+    background-color: rgb(110, 110, 110);
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 100, 0, 0.2);
 }
@@ -67,7 +67,7 @@ main {
 .genel-bilgiler,
 .nufus,
 .gezilecek-yerler {
-  background-color: #ffffff;
+  background-color:rgb(110, 110, 110);
   padding: 80px;
   margin-bottom: 20px;
   border-radius: 8px;
@@ -79,9 +79,22 @@ main {
 .nufus h2,
 .gezilecek-yerler h2 {
   margin-top: 0;
-  color: #1e6f5c;
+  color: #00ff4c;
 }
 
+.genel-bilgiler p,
+.population td{
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.population h2{
+  color: #00ff0d;
+}
+
+.map{
+  color: #00ff0d;
+}
 /* Slider alanı */
 * { box-sizing: border-box; }
 
@@ -199,7 +212,7 @@ main {
 
 /* Linkler */
 a {
-  color: #0f4c75;
+  color: #e0e0e0;
   text-decoration: none;
 }
 
@@ -231,4 +244,8 @@ footer a {
     color: white;
     text-decoration: none;
     font-size: 18px;
+}
+
+.mySlides text{
+  color: white;
 }

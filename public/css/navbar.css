@@ -19,7 +19,7 @@ body {
 /* Navbar iç düzeni */
 .navbar-container .container {
     display: flex;
-    justify-content: center; /* Sol logo, sağ menü */
+    justify-content: center; /* Navbar öğelerini tam ortala */
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -29,7 +29,9 @@ body {
 .navbar-container nav ul {
     display: flex;
     list-style: none;
+    justify-content: space-evenly;
     padding: 0;
+    width: 100%;
 }
 
 .navbar-container nav li {

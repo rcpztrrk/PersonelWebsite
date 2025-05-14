@@ -6,81 +6,102 @@
     padding: 0;
 }
 
-/* -------- SADECE CV SAYFASINA ÖZEL -------- */
+/* -------- CV SAYFASI GENEL STİL -------- */
 .cv-page {
-   
-    background:  #0d4e28; /* Yeşil tema */
+    background: #0d4e28; /* Yeşil tema */
     color: white;
-    text-align: center;
-    padding: 40px;
+    padding-top: 80px; /* Navbar sabit olduğu için üst boşluk bırak */
 }
 
-/* -------- HEADER -------- */
-.cv-header {
-    background: #0d532a;
-    color: white;
-    padding: 30px;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* -------- CV SAYFASINDAKİ BÖLÜMLER -------- */
-.cv-content section {
+/* ANA SAYFA YAPISI */
+.cv-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
     margin: 40px auto;
-    padding: 40px;
-    width: 80%;
-    background-color: white;
+    padding: 20px;
+}
+
+/* ANA İÇERİK */
+.cv-content {
+    flex: 2; /* Orta alan geniş olacak */
+    padding: 30px;
+    background-color: rgb(110, 110, 110);
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    color: black;
+    color: white;
 }
 
-/* Navbar'a özel stil eklenmesin */
-
-
-.cv-content section:hover {
-    transform: scale(1.02);
+/* YANLARDAKİ BÖLÜMLER */
+.cv-sidebar {
+    flex: 1; /* Sağ ve sol bölümler eşit olacak */
+    padding: 20px;
+    background-color: rgb(110, 110, 110);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px; /* Sabit genişlik */
 }
 
-/* -------- BAŞLIKLAR -------- */
-.cv-content h2 {
-    font-size: 30px;
-    color: #1e8449;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+/* SOL ve SAĞ POZİSYONLAR */
+.cv-sidebar.left {
+    margin-right: 20px;
+    text-align: left;
 }
 
-/* -------- LİSTELER -------- */
-.cv-content ul {
+.cv-sidebar.right {
+    margin-left: 20px;
+    text-align: right;
+}
+
+/* BAŞLIKLAR */
+.cv-content h2, .cv-sidebar h2 {
+    font-size: 28px;
+    color: #33ff00;
+}
+
+/* LİSTELER */
+.cv-content ul, .cv-sidebar ul {
     list-style-type: none;
     padding: 0;
 }
 
-.cv-content ul li {
+.cv-content ul li, .cv-sidebar ul li {
     font-size: 18px;
-    margin: 8px 0;
     padding: 10px;
-    background-color: #d5f5e3;
+    background-color: rgb(110, 110, 110);
     border-radius: 5px;
-    font-weight: bold;
     transition: background 0.3s ease;
 }
 
-.cv-content ul li:hover {
+.cv-content ul li:hover, .cv-sidebar ul li:hover {
     background-color: #b8e994;
 }
 
-/* -------- İLETİŞİM BİLGİLERİ -------- */
-.cv-content .contact a {
-    color: #1e8449;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
+/* FOOTER */
+footer {
+    padding: 20px;
+    background: #1e8449;
+    color: white;
+    text-align: center;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
 }
 
-.cv-content .contact a:hover {
-    text-decoration: underline;
-    color: #145a32;
+/* MOBİL UYUM - Küçük ekranlarda sol ve sağ bölümler alt alta gelir */
+@media (max-width: 768px) {
+    .cv-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cv-sidebar {
+        width: 90%;
+        text-align: center; /* Mobilde ortala */
+    }
+}
+
+/* NAVBAR’A ÖZEL AYARLAR (ÖZGEÇMİŞ SAYFASINDA DEĞİŞMESİN) */
+.cv-page .navbar-container {
+    all: unset; /* Özgeçmiş CSS’i navbarı etkilemesin */
 }

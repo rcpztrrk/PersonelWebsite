@@ -7,8 +7,8 @@
     display: inline-block;
     font-size: 22px; /* Yazıyı büyüttük */
     font-weight: bold;
-    color: white;
-    background-color: #0d6efd; /* Şık mavi ton */
+    color: rgb(70, 69, 69);
+    background-color: #0d965d; /* Şık mavi ton */
     padding: 12px 20px;
     border-radius: 8px;
     text-decoration: none;
@@ -16,6 +16,6 @@
 }
 
 .linkss a:hover {
-    background-color: #0048aa; /* Hover efekti */
+    background-color: #0d965d; /* Hover efekti */
     transform: scale(1.1); /* Buton büyüme efekti */
 }

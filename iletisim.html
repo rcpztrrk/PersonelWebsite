@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim Sayfası</title>
+    <link rel="stylesheet" href="public/css/index.css"> <!-- Stilleri bağladık -->
+</head>
+<body class="contact-page">
+
+    <header class="navbar-container">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="sehrim.html">Şehrim</a></li>
+                    <li><a href="ozgecmis.html">Öz Geçmiş</a></li>
+                    <li><a href="ilgialanım.html">İlgi Alanlarım</a></li>
+                    <li><a href="giris.html">Giriş Yap</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+     <main class="contact-container">
+        <h2>📞 İletişim Formu</h2>
+        <<form id="contactForm" action="gonderilen_veriler.html" method="GET">
+    <label for="name">Ad Soyad:</label>
+    <input type="text" id="name" name="name" v-model="name" required>
+
+    <label for="email">E-posta:</label>
+    <input type="email" id="email" name="email" v-model="email" required>
+
+    <label for="phone">Telefon:</label>
+    <input type="text" id="phone" name="phone" v-model="phone" required>
+
+    <label for="subject">Konu:</label>
+    <select id="subject" name="subject" v-model="subject">
+        <option value="genel">Genel</option>
+        <option value="destek">Destek</option>
+        <option value="geri_bildirim">Geri Bildirim</option>
+    </select>
+
+    <div class="gender-container">
+        <label>Cinsiyet:</label>
+        <input type="radio" id="male" name="gender" value="Erkek" v-model="gender">
+        <label for="male">Erkek</label>
+
+        <input type="radio" id="female" name="gender" value="Kadın" v-model="gender">
+        <label for="female">Kadın</label>
+    </div>
+
+    <label for="message">Mesajınız:</label>
+    <textarea id="message" name="message" v-model="message" required></textarea>
+
+    <div class="buttons">
+       <button type="button" id="validateJS">JavaScript ile Kontrol</button>
+        <button type="button" @click="validateForm">Vue.js ile Kontrol</button>
+        <button type="reset">Temizle</button>
+        <button type="submit">Gönder</button>
+    </div>
+</form>
+
+    </main>
+
+ <script src="public/js/form-validation.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@3"></script> 
+<script src="public/js/vue-validation.js"></script> 
+
+    
+</body>
+</html>

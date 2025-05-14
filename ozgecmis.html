@@ -7,7 +7,7 @@
     
     <title>Özgeçmişim</title>
 </head>
-<body class="cv-page">
+<body >
     
     <header class="navbar-container">
     <div class="container">
@@ -24,49 +24,90 @@
     </div>
 </header>
 
+     
+
+    
+
     <!-- CV İçeriği -->
-    <main class="cv-content">
-        
-        <!-- Eğitim Bölümü -->
-        <section class="education">
-            <h2>🎓 Eğitim</h2>
-            <article>
-                <h3>Sakarya Üniversitesi - Bilgisayar Mühendisliği</h3>
-                <p><strong>1. Sınıf Öğrencisi</strong> | 2024 - Devam Ediyor</p>
-            </article>
-        </section>
-
-        <!-- Beceriler Bölümü -->
-        <section class="skills">
-            <h2>🛠 Beceriler</h2>
+    <div class="cv-layout">
+        <!-- Sol Bölüm -->
+        <aside class="cv-sidebar left">
+            <h2>📌 Ek Bilgiler</h2>
             <ul>
-                <li>C#,C++, HTML, CSS ve JavaScript</li>
-                <li>Web geliştirme ve UI tasarımı</li>
-                <li>Problem çözme & algoritma geliştirme</li>
+                <li>Programlama merakım lise yıllarında başladı.</li>
+                <li>Oyun geliştirme ve web tasarımına ilgim var.</li>
+                <li>Aktif olarak yeni teknolojileri takip ediyorum.</li>
             </ul>
-        </section>
+        </aside>
 
-        <!-- Projeler ve Deneyim -->
-        <section class="projects">
-            <h2>💻 Projeler & Deneyimler</h2>
-            <article>
-                <h3>Kendi Web Sayfam</h3>
-                <p>Kişisel web sitemde HTML, CSS ve JavaScript kullanarak özelleştirilmiş bir CV sayfası oluşturdum.</p>
-            </article>
-        </section>
+        <!-- Ana İçerik -->
+        <main class="cv-content">
+            
+            <!-- Eğitim Bölümü -->
+            <section class="education">
+                <h2>🎓 Eğitim</h2>
+                <article>
+                    <h3><time datetime="2024">2024</time> - Devam Ediyor</h3>
+                    <p><strong>Üniversite:</strong> Sakarya Üniversitesi</p>
+                    <p><strong>Bölüm:</strong> Bilgisayar Mühendisliği</p>
+                    <p><strong>Derece:</strong> Lisans</p>
+                </article>
+            </section>
 
-        <!-- İletişim Bölümü -->
-        <section class="contact">
-            <h2>📞 İletişim</h2>
-            <address>
-                <p>Email: <a href="mailto:recep@example.com">recep@example.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/recep" target="_blank">LinkedIn Profilim</a></p>
-                <p>GitHub: <a href="https://github.com/recep" target="_blank">GitHub Repo</a></p>
-            </address>
-        </section>
-        
-    </main>
+            <!-- Beceriler -->
+            <section class="skills">
+                <h2>🛠 Beceriler</h2>
+                <ul>
+                    <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+                    <li><strong>Backend:</strong> C#, ASP.NET</li>
+                    <li><strong>UI/UX:</strong> Responsive tasarım ve Bootstrap</li>
+                </ul>
+            </section>
 
+            <!-- Projeler ve Deneyim -->
+            <section class="projects">
+                <h2>💻 Projeler & Deneyimler</h2>
+                <article>
+                    <h3>Kişisel Web Sayfam</h3>
+                    <p>Kendi web sitemde HTML, CSS ve JavaScript kullanarak CV sayfası oluşturdum.</p>
+                </article>
+                <article>
+                    <h3>Oyun API Entegrasyonu</h3>
+                    <p>RAWG API ile oyun verilerini dinamik olarak çeken proje geliştirdim.</p>
+                </article>
+            </section>
+
+            <!-- İletişim Bölümü -->
+            <section class="contact">
+                <h2>📞 İletişim</h2>
+                <address>
+                    <p>Email: <a href="mailto:recep@example.com">recep@example.com</a></p>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/recep" target="_blank">LinkedIn Profilim</a></p>
+                    <p>GitHub: <a href="https://github.com/recep" target="_blank">GitHub Repo</a></p>
+                </address>
+            </section>
+            
+        </main>
+
+        <!-- Sağ Bölüm -->
+        <aside class="cv-sidebar right">
+            <h2>🎯 Hedefler</h2>
+            <ul>
+                <li>Web geliştirme alanında uzmanlaşmak.</li>
+                <li>Back-end teknolojilerine daha fazla odaklanmak.</li>
+                <li>Kendi uygulamalarımı profesyonel seviyeye taşımak.</li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Recep Öztürk | Tüm hakları saklıdır.</p>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </footer>
 
 </body>
 </html>

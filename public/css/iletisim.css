@@ -1,0 +1,68 @@
+.contact-page {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: white;
+    text-align: center;
+    padding: 80px;
+}
+
+/* İletişim sayfası için özel stil */
+.contact-container {
+    width: 60%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Sadece iletişim sayfasındaki form */
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Input ve textarea sadece iletişim sayfasına özel olacak */
+.contact-container input,
+.contact-container textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Butonlar */
+.contact-container .buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-container button {
+    background-color: #1e8449;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-container button:hover {
+    background-color: #145a32;
+}
+
+.gender-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Butonlar arasında boşluk */
+}
+
+.gender-container label {
+    margin-right: 250px; /* Label ve buton arasındaki mesafe */
+}
+
+#message {
+    height: 150px; /* Varsayılan yüksekliği artır */
+    resize: vertical; /* Kullanıcı isterse boyutunu değiştirebilir */
+}
