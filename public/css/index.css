@@ -1,4 +1,4 @@
-@import 'default.css';
+@import 'global.css';
 @import 'fontFamily.css';
 @import 'navbar.css';
 @import 'header.css';
@@ -11,3 +11,4 @@
 @import 'sehrim.css';
 @import 'ilgialanım.css';
 @import 'iletisim.css';
+@import 'giris.css';

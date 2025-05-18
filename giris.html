@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap - Kişisel Web Projem</title>
+    <link rel="stylesheet" href="public/css/index.css">
+</head>
+
+<header class="navbar-container">
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="sehrim.html">Şehrim</a></li>
+                <li><a href="ozgecmis.html">Öz Geçmiş</a></li>
+                <li><a href="ilgialanım.html">İlgi Alanım</a></li>
+                <li id="authLink"><a href="giris.html">Giriş Yap</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<body class="giris">
+    <div class="login-container">
+        <h2>Öğrenci Girişi</h2>
+        <form id="loginForm" action="login.php" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="username">Kullanıcı Adı</label>
+                <input type="text" id="username" name="username" placeholder="b1812100001@sakarya.edu.tr">
+                <div id="usernameError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre</label>
+                <input type="password" id="password" name="password" placeholder="b1812100001">
+                <div id="passwordError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <button type="submit">Giriş Yap</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            
+            // Kullanıcı adı kontrolü
+            if (username === '') {
+                document.getElementById('usernameError').textContent = 'Kullanıcı adı boş bırakılamaz';
+                isValid = false;
+            } else if (!isValidEmail(username)) {
+                document.getElementById('usernameError').textContent = 'Geçerli bir Sakarya Üniversitesi email adresi giriniz';
+                isValid = false;
+            } else {
+                document.getElementById('usernameError').textContent = '';
+            }
+            
+            // Şifre kontrolü
+            if (password === '') {
+                document.getElementById('passwordError').textContent = 'Şifre boş bırakılamaz';
+                isValid = false;
+            } else {
+                document.getElementById('passwordError').textContent = '';
+            }
+            
+            return isValid;
+        }
+        
+        function isValidEmail(email) {
+            const regex = /^[a-zA-Z][0-9]{10}@sakarya\.edu\.tr$/;
+            return regex.test(email);
+        }
+    </script>
+    <script>
+    // Tüm sayfalarda çalışacak navbar güncelleme
+    document.addEventListener('DOMContentLoaded', function() {
+        const username = sessionStorage.getItem('username');
+        const authLink = document.getElementById('authLink');
+        if (authLink) {
+            authLink.innerHTML = username 
+                ? '<a href="logout.php">Çıkış Yap</a>' 
+                : '<a href="giris.html">Giriş Yap</a>';
+        }
+    });
+</script>
+</body>
+</html>

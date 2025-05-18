@@ -1,16 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+
 
 /* -------- CV SAYFASI GENEL STİL -------- */
 .cv-page {
-    background: #0d4e28; /* Yeşil tema */
-    color: white;
-    padding-top: 80px; /* Navbar sabit olduğu için üst boşluk bırak */
+    
 }
 
 /* ANA SAYFA YAPISI */
@@ -79,7 +73,10 @@
 }
 
 /* FOOTER */
-footer {
+footer-cv {
+    padding-bottom: 60px;
+    position: relative;
+    display: block;
     padding: 20px;
     background: #1e8449;
     color: white;

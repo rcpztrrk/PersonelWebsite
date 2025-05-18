@@ -65,8 +65,7 @@ main {
 
 /* Özel section stilleri */
 .genel-bilgiler,
-.nufus,
-.gezilecek-yerler {
+.nufus {
   background-color:rgb(110, 110, 110);
   padding: 80px;
   margin-bottom: 20px;
@@ -98,6 +97,14 @@ main {
 /* Slider alanı */
 * { box-sizing: border-box; }
 
+.slideshow-container {
+  margin: 40px auto;
+  position: relative;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
@@ -163,7 +170,7 @@ main {
   color: white;
   font-size: 16px;
   padding: 8px 12px;
-  position: absolute;
+  position: relative;
   bottom: 10px;
   width: 100%;
   text-align: center;
@@ -209,6 +216,53 @@ main {
   to { opacity: 1; }
 }
 
+/* Yemek Slider Stilleri */
+.food-slider-container {
+  margin: 40px auto;
+  position: relative;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.food-slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.myFoodSlides {
+  display: none;
+}
+
+.myFoodSlides img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.food-dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.food-dot.active {
+  background-color: #e67e22; /* Turuncu renk */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .myFoodSlides img {
+    height: 350px;
+  }
+}
 
 /* Linkler */
 a {
@@ -234,17 +288,8 @@ a:hover {
   margin-top: 0;
   color: #333333;
 }
-/* -------- FOOTER -------- */
-footer {
-    padding: 20px;
-    background-color: #2e7d32;
-}
 
-footer a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
+
 
 .mySlides text{
   color: white;

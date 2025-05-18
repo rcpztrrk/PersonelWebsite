@@ -9,23 +9,22 @@
 <body class="contact-page">
 
     <header class="navbar-container">
-        <div class="container">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="sehrim.html">Şehrim</a></li>
-                    <li><a href="ozgecmis.html">Öz Geçmiş</a></li>
-                    <li><a href="ilgialanım.html">İlgi Alanlarım</a></li>
-                    <li><a href="giris.html">Giriş Yap</a></li>
-                    <li><a href="iletisim.html">İletişim</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="sehrim.html">Şehrim</a></li>
+                <li><a href="ozgecmis.html">Öz Geçmiş</a></li>
+                <li><a href="ilgialanım.html">İlgi Alanım</a></li>
+                <li id="authLink"><a href="giris.html">Giriş Yap</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
      <main class="contact-container">
         <h2>📞 İletişim Formu</h2>
-        <<form id="contactForm" action="gonderilen_veriler.html" method="GET">
+        <form id="contactForm" action="gonderilen_veriler.html" method="GET">
     <label for="name">Ad Soyad:</label>
     <input type="text" id="name" name="name" v-model="name" required>
 
@@ -67,7 +66,18 @@
  <script src="public/js/form-validation.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@3"></script> 
 <script src="public/js/vue-validation.js"></script> 
-
+<script>
+    // Tüm sayfalarda çalışacak navbar güncelleme
+    document.addEventListener('DOMContentLoaded', function() {
+        const username = sessionStorage.getItem('username');
+        const authLink = document.getElementById('authLink');
+        if (authLink) {
+            authLink.innerHTML = username 
+                ? '<a href="logout.php">Çıkış Yap</a>' 
+                : '<a href="giris.html">Giriş Yap</a>';
+        }
+    });
+</script>
     
 </body>
 </html>

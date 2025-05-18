@@ -15,14 +15,13 @@
                 <li><a href="index.html">Ana Sayfa</a></li>
                 <li><a href="sehrim.html">Şehrim</a></li>
                 <li><a href="ozgecmis.html">Öz Geçmiş</a></li>
-                <li><a href="ilgialanım.html">İlgi Alanlarım</a></li>
-                <li><a href="giris.html">Giriş Yap</a></li>
+                <li><a href="ilgialanım.html">İlgi Alanım</a></li>
+                <li id="authLink"><a href="giris.html">Giriş Yap</a></li>
                 <li><a href="iletisim.html">İletişim</a></li>
             </ul>
         </nav>
     </div>
 </header>
-
 
 
 <main>
@@ -75,6 +74,7 @@
  
 
   <div class="slideshow-container">
+<h2><i class="gezilecek-yerler"></i> Bursa Mekanlar</h2>
 
   <!-- Ulucami -->
   <div class="mySlides fade">
@@ -119,17 +119,75 @@
   <span class="dot" onclick="currentSlide(4)"></span>
 </div>
 
+<!-- Yemekler Slider -->
+<div class="food-slider-container">
+  <h2><i class="fas fa-utensils"></i> Bursa Mutfağı</h2>
+  
+  <div class="food-slideshow-container">
+    <!-- İskender Kebap -->
+    <div class="myFoodSlides fade">
+      <div class="numbertext">1 / 4</div>
+      <img src="public/img/iskender.jpg" style="width:100%">
+      <div class="text">İskender Kebap - Bursa'nın dünyaca ünlü kebap lezzeti. Özel dana eti, tereyağı ve yoğurtla servis edilir.</div>
+    </div>
+
+    <!-- Kestane Şekeri -->
+    <div class="myFoodSlides fade">
+      <div class="numbertext">2 / 4</div>
+      <img src="public/img/kestane-sekeri.jpg" style="width:100%">
+      <div class="text">Bursa Kestane Şekeri - Uludağ'ın kestanelerinden yapılan, Bursa'ya özgü bu eşsiz tatlı.</div>
+    </div>
+
+    <!-- Bursa Lokumu -->
+    <div class="myFoodSlides fade">
+      <div class="numbertext">3 / 4</div>
+      <img src="public/img/bursa-lokumu.jpg" style="width:100%">
+      <div class="text">Bursa Lokumu - Geleneksel yöntemlerle yapılan, meyveli ve cevizli çeşitleri meşhur.</div>
+    </div>
+
+    <!-- Tahinli Pide -->
+    <div class="myFoodSlides fade">
+      <div class="numbertext">4 / 4</div>
+      <img src="public/img/tahinli-pide.jpg" style="width:100%">
+      <div class="text">Tahinli Pide - Bursa'ya özgü geleneksel bir tatlı. Özellikle kış aylarında tüketilir.</div>
+    </div>
+
+    <!-- Önceki / Sonraki Butonlar -->
+    <button class="prev" onclick="plusFoodSlides(-1)">&#10094;</button>
+    <button class="next" onclick="plusFoodSlides(1)">&#10095;</button>
+  </div>
+  
+  <!-- Dots -->
+  <div style="text-align:center">
+    <span class="food-dot" onclick="currentFoodSlide(1)"></span>
+    <span class="food-dot" onclick="currentFoodSlide(2)"></span>
+    <span class="food-dot" onclick="currentFoodSlide(3)"></span>
+    <span class="food-dot" onclick="currentFoodSlide(4)"></span>
+  </div>
+</div>
+
+
+
 
 <div class="linkss">
     <a href="mirasimiz.html">Mirasımız</a>
 </div>
 
-
-  
 </main>
 
 
-
+    <script>
+    // Tüm sayfalarda çalışacak navbar güncelleme
+    document.addEventListener('DOMContentLoaded', function() {
+        const username = sessionStorage.getItem('username');
+        const authLink = document.getElementById('authLink');
+        if (authLink) {
+            authLink.innerHTML = username 
+                ? '<a href="logout.php">Çıkış Yap</a>' 
+                : '<a href="giris.html">Giriş Yap</a>';
+        }
+    });
+    </script>
 <script src="public/js/slider.js"></script>
 </body>
 </html>

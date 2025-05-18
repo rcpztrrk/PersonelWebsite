@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 
-body {
-    font-family: "Josefin Sans", sans-serif;
-    background-color: #e6f4ea; /* Hafif yeşil ton */
-    text-align: center;
-}
 
 /* -------- HEADER -------- */
 .miras-header {
@@ -80,9 +75,10 @@ body {
 }
 
 /* -------- FOOTER -------- */
-footer {
+footer{
     padding: 20px;
     background-color: #2e7d32;
+    position: static;
 }
 
 footer a {

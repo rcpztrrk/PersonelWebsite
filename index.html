@@ -1,24 +1,99 @@
     <!DOCTYPE html>
     <html lang="tr">
         <head>
-            <meta charset="UFT-8">
+            <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width,initial-scale=1.0">
             <link rel="stylesheet" href="public/css/index.css">
           
             <title>Kişisel Web Projem</title>
+            <style>
+    /* Toast bildirim stilleri */
+    .toast {
+        position: fixed;
+        top: 80px; /* Navbar yüksekliği + 20px boşluk */
+        right: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        z-index: 1000; /* Navbar'dan daha yüksek z-index */
+        transform: translateX(150%);
+        transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        max-width: 350px;
+    }
+    
+    /* Navbar'ın z-index'ini düşürüyoruz */
+    .navbar-container {
+        position: relative;
+        z-index: 100; /* Toast'tan daha düşük */
+    }
+    
+    /* Diğer toast stilleri aynı kalacak */
+    .toast.show {
+        transform: translateX(0);
+    }
+    
+    .toast-message {
+        flex-grow: 1;
+    }
+    
+    .toast-close {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        margin-left: 15px;
+        padding: 0;
+    }
+    
+    .toast-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        background-color: rgba(255,255,255,0.5);
+        width: 100%;
+        transform-origin: left;
+        transform: scaleX(1);
+        transition: transform 5s linear;
+    }
+    
+    .toast.show .toast-progress {
+        transform: scaleX(0);
+    }
+    @media (max-width: 768px) {
+    .toast {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
+</style>
         </head>
         
          <body class="main">  
+           <!-- Toast bildirim -->
+    <div id="toast" class="toast">
+        <div class="toast-message" id="toastMessage"></div>
+        <button class="toast-close" onclick="hideToast()">×</button>
+        <div class="toast-progress"></div>
+    </div>
 
-            <header class="navbar-container">
+
+      <header class="navbar-container">
     <div class="container">
         <nav>
             <ul>
                 <li><a href="index.html">Ana Sayfa</a></li>
                 <li><a href="sehrim.html">Şehrim</a></li>
                 <li><a href="ozgecmis.html">Öz Geçmiş</a></li>
-                <li><a href="ilgialanım.html">İlgi Alanlarım</a></li>
-                <li><a href="giris.html">Giriş Yap</a></li>
+                <li><a href="ilgialanım.html">İlgi Alanım</a></li>
+                <li id="authLink"><a href="giris.html">Giriş Yap</a></li>
                 <li><a href="iletisim.html">İletişim</a></li>
             </ul>
         </nav>
@@ -76,8 +151,73 @@
         
             
 
-          
+          <script>
+        // Sayfa yüklendiğinde kontrol et
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const loginSuccess = urlParams.get('login');
+            const username = sessionStorage.getItem('username');
+            
+            // Giriş durumuna göre navbar'ı güncelle
+            updateNavbar(!!username);
+            
+            if (loginSuccess === 'success' && username) {
+                showToast(`Hoşgeldiniz, ${username}`);
+            }
+        });
+        
+        // Navbar'ı güncelle
+        function updateNavbar(isLoggedIn) {
+            const authLink = document.getElementById('authLink');
+            if (authLink) {
+                if (isLoggedIn) {
+                    authLink.innerHTML = '<a href="logout.php">Çıkış Yap</a>';
+                } else {
+                    authLink.innerHTML = '<a href="giris.html">Giriş Yap</a>';
+                }
+            }
+        }
+        
+        // Toast göster
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            
+            // Otomatik kapanma
+            setTimeout(() => {
+                hideToast();
+            }, 5000);
+        }
+        
+        // Toast gizle
+        function hideToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('show');
+            
+            // URL'den login parametresini kaldır
+            if (window.history.replaceState) {
+                const url = new URL(window.location);
+                url.searchParams.delete('login');
+                window.history.replaceState(null, '', url);
+            }
+        }
+    </script>
 <script src="public/js/slider.js"></script>
+<script>
+    // Tüm sayfalarda çalışacak navbar güncelleme
+    document.addEventListener('DOMContentLoaded', function() {
+        const username = sessionStorage.getItem('username');
+        const authLink = document.getElementById('authLink');
+        if (authLink) {
+            authLink.innerHTML = username 
+                ? '<a href="logout.php">Çıkış Yap</a>' 
+                : '<a href="giris.html">Giriş Yap</a>';
+        }
+    });
+</script>
 
          </body>
     </html>

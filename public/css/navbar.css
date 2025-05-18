@@ -11,10 +11,6 @@
     z-index: 1000; /* Üstte kalmasını sağla */
 }
 
-/* Sayfa içeriğini aşağı kaydırmak için */
-body {
-    padding-top: 60px; /* Navbar yüksekliği kadar boşluk bırak */
-}
 
 /* Navbar iç düzeni */
 .navbar-container .container {
@@ -23,6 +19,35 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* NAVBAR MENÜ */
@@ -46,10 +71,7 @@ body {
     transition: color 0.3s ease-in-out, transform 0.2s;
 }
 
-.navbar-container nav a:hover {
-    color: #000;
-    transform: scale(1.05);
-}
+
 
 /* Mobil uyum için */
 @media (max-width: 768px) {

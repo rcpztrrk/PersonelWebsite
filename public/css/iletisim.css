@@ -1,9 +1,7 @@
 .contact-page {
-    font-family: Arial, sans-serif;
     background: #121212;
     color: white;
     text-align: center;
-    padding: 80px;
 }
 
 /* İletişim sayfası için özel stil */
@@ -19,7 +17,7 @@
 
 /* Sadece iletişim sayfasındaki form */
 .contact-container form {
-    display: flex;
+    display: absolute;
     flex-direction: column;
     gap: 10px;
 }
