@@ -1,0 +1,66 @@
+ /* Toast bildirim stilleri */
+    .toast {
+        position: fixed;
+        top: 80px; /* Navbar yüksekliği + 20px boşluk */
+        right: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        z-index: 1000; /* Navbar'dan daha yüksek z-index */
+        transform: translateX(150%);
+        transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        max-width: 350px;
+    }
+    
+    /* Navbar'ın z-index'ini düşürüyoruz */
+    .navbar-container {
+        position: relative;
+        z-index: 100; /* Toast'tan daha düşük */
+    }
+    
+    /* Diğer toast stilleri aynı kalacak */
+    .toast.show {
+        transform: translateX(0);
+    }
+    
+    .toast-message {
+        flex-grow: 1;
+    }
+    
+    .toast-close {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        margin-left: 15px;
+        padding: 0;
+    }
+    
+    .toast-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        background-color: rgba(255,255,255,0.5);
+        width: 100%;
+        transform-origin: left;
+        transform: scaleX(1);
+        transition: transform 5s linear;
+    }
+    
+    .toast.show .toast-progress {
+        transform: scaleX(0);
+    }
+    @media (max-width: 768px) {
+    .toast {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}

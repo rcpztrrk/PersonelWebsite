@@ -1,14 +1,9 @@
-.contact-page {
-    background: #121212;
-    color: white;
-    text-align: center;
-}
 
 /* İletişim sayfası için özel stil */
 .contact-container {
-    width: 60%;
-    margin: 50px auto;
-    padding: 20px;
+    width: 70%;
+    margin: 100px auto;
+    padding: 40px;
     background-color: white;
     border-radius: 10px;
     color: black;
@@ -17,9 +12,12 @@
 
 /* Sadece iletişim sayfasındaki form */
 .contact-container form {
-    display: absolute;
+    display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+}
+.contact-container h2{
+   color: #1e9600;
 }
 
 /* Input ve textarea sadece iletişim sayfasına özel olacak */
@@ -52,15 +50,119 @@
 
 .gender-container {
     display: flex;
-    align-items: center;
-    gap: 15px; /* Butonlar arasında boşluk */
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0;
 }
 
-.gender-container label {
-    margin-right: 250px; /* Label ve buton arasındaki mesafe */
+/* Radio buton grubu */
+.gender-options {
+    display: flex;
+    align-items: center; /* Dikeyde ortala */
+    gap: 20px; /* Elemanlar arası boşluk */
 }
 
+/* Her bir radio buton ve label grubu */
+.gender-option {
+    display: flex;
+    align-items: center; /* Dikeyde ortala */
+    gap: 5px; /* Buton ve label arası boşluk */
+}
+
+/* Radio buton özelleştirmesi */
+.gender-option input[type="radio"] {
+    margin: 0; /* Varsayılan margin'i sıfırla */
+    width: auto; /* Otomatik genişlik */
+}
 #message {
-    height: 150px; /* Varsayılan yüksekliği artır */
+    height: 200px; /* Varsayılan yüksekliği artır */
     resize: vertical; /* Kullanıcı isterse boyutunu değiştirebilir */
+}
+
+/* Mobil Responsive Düzenlemeleri (992px altı) */
+@media (max-width: 992px) {
+    
+    /* İletişim formu düzeni */
+    .contact-container {
+        width: 90%;
+        margin: 80px auto 40px;
+        padding: 20px;
+    }
+    
+    .contact-container .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .gender-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 8px;
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .gender-container label:first-child {
+        margin-bottom: 8px;
+        width: 100%;
+    }
+    
+    .gender-container > div {
+        display: flex;
+        gap: 15px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .gender-container input[type="radio"] {
+        margin: 0;
+        width: auto;
+    }
+    
+    .gender-container label[for="male"],
+    .gender-container label[for="female"] {
+        margin-right: 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+/* Daha küçük ekranlar için (576px altı) */
+@media (max-width: 576px) {
+    /* ... diğer stiller aynı ... */
+    
+    .gender-container > div {
+        gap: 10px;
+    }
+    
+    .gender-container label[for="male"],
+    .gender-container label[for="female"] {
+        font-size: 0.9rem;
+    }
+    
+    /* Form elemanları */
+    .contact-container input,
+    .contact-container textarea,
+    .contact-container select {
+        width: 100%;
+    }
+}
+
+/* Daha küçük ekranlar için (576px altı) */
+@media (max-width: 576px) {
+    .contact-container {
+        width: 95%;
+        padding: 15px;
+        margin-top: 70px;
+    }
+    
+    .contact-container h2 {
+        font-size: 1.5rem;
+    }
+    
+    .gender-container {
+        gap: 5px;
+    }
 }

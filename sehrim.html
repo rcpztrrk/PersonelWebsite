@@ -8,17 +8,24 @@
 </head>
 <body>
 
-  <header class="navbar-container">
+<header class="navbar-container">
     <div class="container">
         <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="sehrim.html">Şehrim</a></li>
-                <li><a href="ozgecmis.html">Öz Geçmiş</a></li>
-                <li><a href="ilgialanım.html">İlgi Alanım</a></li>
-                <li id="authLink"><a href="giris.html">Giriş Yap</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-            </ul>
+            <!-- Hamburger butonu ekliyoruz -->
+            <button class="navbar-toggler" type="button" onclick="toggleNavbar()">
+                <span class="toggler-icon">☰</span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Öz Geçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ilgialanım.html">İlgi Alanım</a></li>
+                    <li class="nav-item" id="authLink"><a class="nav-link" href="giris.html">Giriş Yap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
         </nav>
     </div>
 </header>
@@ -26,12 +33,12 @@
 
 <main>
   <section class="genel-bilgiler">
-    <h2>Genel Bilgiler</h2>
-    <p>Bursa, Türkiye'nin Marmara Bölgesi'nde yer alır ve Osmanlı'nın ilk başkentidir. "Yeşil Bursa" olarak bilinir.</p>
+    <h1>BURSA</h1>
+    <p>Bursa, Osmanlı'nın ilk başkenti olup tarihi ve doğal güzellikleriyle öne çıkan bir şehirdir. Uludağ, tarihi camiler ve kaplıcalarıyla ziyaretçilerine farklı deneyimler sunar. Türkiye’nin otomotiv ve tekstil sanayisinde önemli bir merkezdir. Aynı zamanda İskender kebabı ve kestane şekeri gibi lezzetleriyle ünlüdür.</p>
   </section>
 
   <section class="population">
-        <h2>📊 Nüfus Bilgileri</h2>
+        <h2>Nüfus Bilgileri</h2>
         <table>
             <tr>
                 <th>İlçe</th>
@@ -62,64 +69,135 @@
     </section>
 <section class="map">
         <h2>Bursa'nın Haritası</h2>
-       <iframe 
+    <iframe 
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77396.84783921208!2d28.848479550341668!3d40.18480538325079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca3f1845ef7e21%3A0xa15a2c7a227e3d74!2sBursa!5e0!3m2!1str!2sus!4v1688039412340" 
     width="100%" height="700" style="border:0;" 
     allowfullscreen="" loading="lazy">
-</iframe>
-
-
-
-    </section>
+  </iframe>
+</section>
  
 
-  <div class="slideshow-container">
-<h2><i class="gezilecek-yerler"></i> Bursa Mekanlar</h2>
-
-  <!-- Ulucami -->
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 4</div>
-    <img src="public/img/ulucami.jpg" style="width:100%">
-    <div class="text">Ulucami - Osmanlı'nın İlk Büyük Camisi.
-      1399 yılında yapılmış olup Osmanlı cami mimarisinin en önemli örneklerinden biridir.</div>
-  </div>
-
-  <!-- Uludağ -->
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 4</div>
-    <img src="public/img/uludag.jpg" style="width:100%">
-    <div class="text">Uludağ - Türkiye'nin En Ünlü Kayak Merkezi.Türkiye'nin en popüler kayak merkezlerinden biri olup dört mevsim doğa turizmine uygundur.</div>
-  </div>
-
-  <!-- Cumalıkızık -->
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 4</div>
-    <img src="public/img/cumalikizik.jpg" style="width:100%">
-    <div class="text">Cumalıkızık - Osmanlı’dan Günümüze Gelen Köy.UNESCO Dünya Mirası listesinde yer alan, Osmanlı döneminden kalma bir köydür.</div>
-  </div>
-
-  <!-- Kozahan -->
-  <div class="mySlides fade">
-    <div class="numbertext">4 / 4</div>
-    <img src="public/img/kozahan.jpg" style="width:100%">
-    <div class="text"> Kozahan - Tarihî İpek Yolu'nun Ticaret Merkezi.İpek ticaretinin merkezi olan tarihi bir handır, günümüzde turistik alışveriş noktasıdır.</div>
-  </div>
-
-  <!-- Önceki / Sonraki Butonlar -->
-  <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-  <button class="next" onclick="plusSlides(1)"> &#10095;</button>
-</div>
-<br>
-
-<!-- Dots -->
-<div style="text-align:center">
+<div class="slideshow-container">
+    <!-- Bursa Mekanları Slider -->
+    <h2><i class="gezilecek-yerler"></i> Bursa Mekanlar</h2>
+    
+        <!-- Ulucami -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <a href="#ulucami-card">
+                <img src="public/img/ulucami.jpg" alt="Ulucami">
+            </a>
+            <div class="text">Ulucami - Osmanlı'nın İlk Büyük Camisi</div>
+        </div>
+        
+        <!-- Uludağ -->
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <a href="#uludag-card">
+                <img src="public/img/uludag.jpg" alt="Uludağ">
+            </a>
+            <div class="text">Uludağ - Türkiye'nin En Ünlü Kayak Merkezi</div>
+        </div>
+        
+        <!-- Cumalıkızık -->
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <a href="#cumalikizik-card">
+                <img src="public/img/cumalikizik.jpg" alt="Cumalıkızık">
+            </a>
+            <div class="text">Cumalıkızık - Osmanlı'dan Günümüze Gelen Köy</div>
+        </div>
+        
+        <!-- Kozahan -->
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <a href="#kozahan-card">
+                <img src="public/img/kozahan.jpg" alt="Kozahan">
+            </a>
+            <div class="text">Kozahan - Tarihî İpek Yolu'nun Ticaret Merkezi</div>
+        </div>
+        
+        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        
+        <div style="text-align:center">
   <span class="dot" onclick="currentSlide(1)"></span>
   <span class="dot" onclick="currentSlide(2)"></span>
   <span class="dot" onclick="currentSlide(3)"></span>
   <span class="dot" onclick="currentSlide(4)"></span>
 </div>
+    </div>
+    
+ 
 
-<!-- Yemekler Slider -->
+
+
+    <!-- Bursa Mekanları Kartları -->
+    <div class="card-container" id="mekan-cards">
+        <!-- Ulucami Kartı -->
+        <div class="card" id="ulucami-card">
+            <img src="public/img/ulucami.jpg" class="card-img" alt="Ulucami">
+            <div class="card-body">
+                <h3 class="card-title">Ulucami</h3>
+                <p class="card-text">
+                    Bursa Ulu Cami, Yıldırım Bayezid tarafından 1396-1400 yılları arasında yaptırılmıştır. 
+                    20 kubbesiyle Osmanlı mimarisinin önemli örneklerindendir.
+                </p>
+                <p><strong>Özellikler:</strong> 55x69 metre boyutlarında, 192 adet hat yazısı içerir.</p>
+                <button class="close-btn" onclick="hideCard('ulucami-card')">Kapat</button>
+            </div>
+        </div>
+        
+        <!-- Uludağ Kartı -->
+        <div class="card" id="uludag-card">
+            <img src="public/img/uludag.jpg" class="card-img" alt="Uludağ">
+            <div class="card-body">
+                <h3 class="card-title">Uludağ</h3>
+                <p class="card-text">
+                    Türkiye'nin en büyük kış sporları merkezidir. 2543 metre yüksekliğiyle 
+                    Marmara'nın en yüksek dağıdır.
+                </p>
+                <p><strong>Özellikler:</strong> 4 mevsim turizm, 30'dan fazla pist, teleferik ile ulaşım.</p>
+                <button class="close-btn" onclick="hideCard('uludag-card')">Kapat</button>
+            </div>
+        </div>
+        
+        <!-- Cumalıkızık Kartı -->
+        <div class="card" id="cumalikizik-card">
+            <img src="public/img/cumalikizik.jpg" class="card-img" alt="Cumalıkızık">
+            <div class="card-body">
+                <h3 class="card-title">Cumalıkızık</h3>
+                <p class="card-text">
+                    UNESCO Dünya Mirası listesinde yer alan, 700 yıllık Osmanlı köyüdür.
+                    Geleneksel mimarisi ve tarihi dokusuyla ünlüdür.
+                </p>
+                <p><strong>Özellikler:</strong> Tarihi konaklar, geleneksel pazarlar, doğal yaşam.</p>
+                <button class="close-btn" onclick="hideCard('cumalikizik-card')">Kapat</button>
+            </div>
+        </div>
+        
+        <!-- Kozahan Kartı -->
+        <div class="card" id="kozahan-card">
+            <img src="public/img/kozahan.jpg" class="card-img" alt="Kozahan">
+            <div class="card-body">
+                <h3 class="card-title">Kozahan</h3>
+                <p class="card-text">
+                    1491 yılında II. Bayezid tarafından yaptırılmıştır. Tarihi ipek ticaretinin 
+                    merkezi olarak kullanılmıştır.
+                </p>
+                <p><strong>Özellikler:</strong> İki katlı kare planlı han, günümüzde alışveriş merkezi.</p>
+                <button class="close-btn" onclick="hideCard('kozahan-card')">Kapat</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<!-- Bursa Yemekleri Slider -->
+
 <div class="food-slider-container">
   <h2><i class="fas fa-utensils"></i> Bursa Mutfağı</h2>
   
@@ -127,28 +205,36 @@
     <!-- İskender Kebap -->
     <div class="myFoodSlides fade">
       <div class="numbertext">1 / 4</div>
+      <a href="#iskender-card">
       <img src="public/img/iskender.jpg" style="width:100%">
+      </a>
       <div class="text">İskender Kebap - Bursa'nın dünyaca ünlü kebap lezzeti. Özel dana eti, tereyağı ve yoğurtla servis edilir.</div>
     </div>
 
     <!-- Kestane Şekeri -->
     <div class="myFoodSlides fade">
       <div class="numbertext">2 / 4</div>
+      <a href="#kestane-sekeri-card">
       <img src="public/img/kestane-sekeri.jpg" style="width:100%">
+      </a>
       <div class="text">Bursa Kestane Şekeri - Uludağ'ın kestanelerinden yapılan, Bursa'ya özgü bu eşsiz tatlı.</div>
     </div>
 
     <!-- Bursa Lokumu -->
     <div class="myFoodSlides fade">
       <div class="numbertext">3 / 4</div>
+      <a href="#bursa-lokumu-card">
       <img src="public/img/bursa-lokumu.jpg" style="width:100%">
+      </a>
       <div class="text">Bursa Lokumu - Geleneksel yöntemlerle yapılan, meyveli ve cevizli çeşitleri meşhur.</div>
     </div>
 
     <!-- Tahinli Pide -->
     <div class="myFoodSlides fade">
       <div class="numbertext">4 / 4</div>
+      <a href="#tahinli-pide-card">
       <img src="public/img/tahinli-pide.jpg" style="width:100%">
+      </a>
       <div class="text">Tahinli Pide - Bursa'ya özgü geleneksel bir tatlı. Özellikle kış aylarında tüketilir.</div>
     </div>
 
@@ -165,8 +251,66 @@
     <span class="food-dot" onclick="currentFoodSlide(4)"></span>
   </div>
 </div>
-
-
+    
+    <!-- Bursa Yemekleri Kartları -->
+    <div class="card-container" id="yemek-cards">
+        <!-- İskender Kebap Kartı -->
+        <div class="card" id="iskender-card">
+            <img src="public/img/iskender.jpg" class="card-img" alt="İskender Kebap">
+            <div class="card-body">
+                <h3 class="card-title">İskender Kebap</h3>
+                <p class="card-text">
+                    Bursa'nın dünyaca ünlü kebap lezzeti. Özel dana eti, tereyağı ve yoğurtla servis edilir.
+                    1867 yılından beri aynı lezzetle yapılmaktadır.
+                </p>
+                <p><strong>Malzemeler:</strong> Kuzu eti, tereyağı, yoğurt, domates sosu, pide.</p>
+                <button class="close-btn" onclick="hideCard('iskender-card')">Kapat</button>
+            </div>
+        </div>
+        
+        <!-- Kestane Şekeri Kartı -->
+        <div class="card" id="kestane-sekeri-card">
+            <img src="public/img/kestane-sekeri.jpg" class="card-img" alt="Kestane Şekeri">
+            <div class="card-body">
+                <h3 class="card-title">Kestane Şekeri</h3>
+                <p class="card-text">
+                    Uludağ'ın kestanelerinden yapılan, Bursa'ya özgü bu eşsiz tatlı, özel şurup içinde 
+                    hazırlanarak sunulmaktadır.
+                </p>
+                <p><strong>Özellikler:</strong> Doğal kestane, şeker şurubu, vanilya.</p>
+                <button class="close-btn" onclick="hideCard('kestane-sekeri-card')">Kapat</button>
+            </div>
+        </div>
+        
+        <!-- Bursa Lokumu Kartı -->
+        <div class="card" id="bursa-lokumu-card">
+            <img src="public/img/bursa-lokumu.jpg" class="card-img" alt="Bursa Lokumu">
+            <div class="card-body">
+                <h3 class="card-title">Bursa Lokumu</h3>
+                <p class="card-text">
+                    Geleneksel yöntemlerle yapılan, meyveli ve cevizli çeşitleri meşhur olan Bursa lokumu,
+                    özel şekerleme teknikleriyle hazırlanır.
+                </p>
+                <p><strong>Çeşitler:</strong> Güllü, cevizli, fıstıklı, meyveli.</p>
+                <button class="close-btn" onclick="hideCard('bursa-lokumu-card')">Kapat</button>
+            </div>
+        </div>
+        
+        <!-- Tahinli Pide Kartı -->
+        <div class="card" id="tahinli-pide-card">
+            <img src="public/img/tahinli-pide.jpg" class="card-img" alt="Tahinli Pide">
+            <div class="card-body">
+                <h3 class="card-title">Tahinli Pide</h3>
+                <p class="card-text">
+                    Bursa'ya özgü geleneksel bir tatlı. Özellikle kış aylarında tüketilen tahinli pide,
+                    sıcak servis edilir.
+                </p>
+                <p><strong>Malzemeler:</strong> Un, tahin, pekmez, ceviz.</p>
+                <button class="close-btn" onclick="hideCard('tahinli-pide-card')">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <div class="linkss">
@@ -175,18 +319,52 @@
 
 </main>
 
-
-    <script>
-    // Tüm sayfalarda çalışacak navbar güncelleme
-    document.addEventListener('DOMContentLoaded', function() {
-        const username = sessionStorage.getItem('username');
-        const authLink = document.getElementById('authLink');
-        if (authLink) {
-            authLink.innerHTML = username 
-                ? '<a href="logout.php">Çıkış Yap</a>' 
-                : '<a href="giris.html">Giriş Yap</a>';
+<script>
+    // URL'de hash varsa ilgili bilgiyi göster
+    window.addEventListener('load', function() {
+        const hash = window.location.hash;
+        if (hash) {
+            showInfo(hash);
         }
     });
+    
+    // Sayfa içi bağlantıları dinle
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId.startsWith('#') && targetId !== '#') {
+                e.preventDefault();
+                showInfo(targetId);
+            }
+        });
+    });
+    
+    // Bilgi göster
+    function showInfo(id) {
+        // Tüm bilgileri gizle
+        document.querySelectorAll('.info-card').forEach(card => {
+            card.classList.remove('active');
+        });
+        
+        // İlgili bilgiyi göster
+        const targetElement = document.querySelector(id);
+        if (targetElement) {
+            targetElement.classList.add('active');
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    
+ 
+
+
+// Hamburger menü toggle fonksiyonu
+function toggleNavbar() {
+    const navbarCollapse = document.getElementById('navbarNav');
+    navbarCollapse.classList.toggle('show');
+}
+
+
+
     </script>
 <script src="public/js/slider.js"></script>
 </body>

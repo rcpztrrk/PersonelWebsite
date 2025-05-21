@@ -8,22 +8,29 @@
 </head>
 <body class="contact-page">
 
-    <header class="navbar-container">
+ <header class="navbar-container">
     <div class="container">
         <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="sehrim.html">Şehrim</a></li>
-                <li><a href="ozgecmis.html">Öz Geçmiş</a></li>
-                <li><a href="ilgialanım.html">İlgi Alanım</a></li>
-                <li id="authLink"><a href="giris.html">Giriş Yap</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-            </ul>
+            <!-- Hamburger butonu ekliyoruz -->
+            <button class="navbar-toggler" type="button" onclick="toggleNavbar()">
+                <span class="toggler-icon">☰</span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Öz Geçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ilgialanım.html">İlgi Alanım</a></li>
+                    <li class="nav-item" id="authLink"><a class="nav-link" href="giris.html">Giriş Yap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
         </nav>
     </div>
 </header>
      <main class="contact-container">
-        <h2>📞 İletişim Formu</h2>
+        <h2>İletişim Formu</h2>
         <form id="contactForm" action="gonderilen_veriler.html" method="GET">
     <label for="name">Ad Soyad:</label>
     <input type="text" id="name" name="name" v-model="name" required>
@@ -42,14 +49,15 @@
     </select>
 
     <div class="gender-container">
-        <label>Cinsiyet:</label>
+    <label>Cinsiyet:</label>
+    <div>
         <input type="radio" id="male" name="gender" value="Erkek" v-model="gender">
         <label for="male">Erkek</label>
 
         <input type="radio" id="female" name="gender" value="Kadın" v-model="gender">
         <label for="female">Kadın</label>
     </div>
-
+</div>
     <label for="message">Mesajınız:</label>
     <textarea id="message" name="message" v-model="message" required></textarea>
 
@@ -67,6 +75,8 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@3"></script> 
 <script src="public/js/vue-validation.js"></script> 
 <script>
+
+    
     // Tüm sayfalarda çalışacak navbar güncelleme
     document.addEventListener('DOMContentLoaded', function() {
         const username = sessionStorage.getItem('username');
@@ -77,6 +87,19 @@
                 : '<a href="giris.html">Giriş Yap</a>';
         }
     });
+
+    function toggleNavbar() {
+    const navbarCollapse = document.getElementById('navbarNav');
+    navbarCollapse.classList.toggle('show');
+   }
+
+  
+
+// Hamburger menü toggle fonksiyonu
+function toggleNavbar() {
+    const navbarCollapse = document.getElementById('navbarNav');
+    navbarCollapse.classList.toggle('show');
+}
 </script>
     
 </body>

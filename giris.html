@@ -11,14 +11,21 @@
 <header class="navbar-container">
     <div class="container">
         <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="sehrim.html">Şehrim</a></li>
-                <li><a href="ozgecmis.html">Öz Geçmiş</a></li>
-                <li><a href="ilgialanım.html">İlgi Alanım</a></li>
-                <li id="authLink"><a href="giris.html">Giriş Yap</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-            </ul>
+            <!-- Hamburger butonu ekliyoruz -->
+            <button class="navbar-toggler" type="button" onclick="toggleNavbar()">
+                <span class="toggler-icon">☰</span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Öz Geçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ilgialanım.html">İlgi Alanım</a></li>
+                    <li class="nav-item" id="authLink"><a class="nav-link" href="giris.html">Giriş Yap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
         </nav>
     </div>
 </header>
@@ -75,8 +82,30 @@
             const regex = /^[a-zA-Z][0-9]{10}@sakarya\.edu\.tr$/;
             return regex.test(email);
         }
-    </script>
-    <script>
+
+        // Sayfa yüklendiğinde aktif menü öğesini ayarla
+document.addEventListener('DOMContentLoaded', function() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+        
+        // Hover efekti için ek event listener'lar
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
+});
+    
+
+
     // Tüm sayfalarda çalışacak navbar güncelleme
     document.addEventListener('DOMContentLoaded', function() {
         const username = sessionStorage.getItem('username');
@@ -87,6 +116,19 @@
                 : '<a href="giris.html">Giriş Yap</a>';
         }
     });
+
+    function toggleNavbar() {
+    const navbarCollapse = document.getElementById('navbarNav');
+    navbarCollapse.classList.toggle('show');
+   }
+
+ 
+
+// Hamburger menü toggle fonksiyonu
+function toggleNavbar() {
+    const navbarCollapse = document.getElementById('navbarNav');
+    navbarCollapse.classList.toggle('show');
+}
 </script>
 </body>
 </html>

@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     background: linear-gradient(135deg, #2ecc71, #27ae60);
-    padding: 15px;
+    padding: 20px;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
     z-index: 1000; /* Üstte kalmasını sağla */
 }
@@ -45,10 +45,7 @@ nav ul li a {
   transition: all 0.3s ease;
 }
 
-nav ul li a:hover, 
-nav ul li a.active {
-  background-color: rgba(255, 255, 255, 0.2);
-}
+
 
 /* NAVBAR MENÜ */
 .navbar-container nav ul {
@@ -71,26 +68,51 @@ nav ul li a.active {
     transition: color 0.3s ease-in-out, transform 0.2s;
 }
 
+/* Hamburger menü stilleri */
+.navbar-toggler {
+    display: none; /* Normalde gizli */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: -5px 5px;
+    position: fixed;
+    left: 10px;
+    top: -1000px;
+    z-index: 100;
+}
 
-
-/* Mobil uyum için */
-@media (max-width: 768px) {
-    .navbar-container .container {
+/* Mobil görünüm */
+@media (max-width: 992px) {
+    .navbar-toggler {
+        display: block; /* Mobilde göster */
+        position: absolute;
+        right: 20px;
+        top: 5px;
+    }
+    
+    .navbar-collapse {
+        display: none; /* Başlangıçta kapalı */
+        width: 100%;
+        padding-top: 15px;
+    }
+    
+    .navbar-collapse.show {
+        display: block; /* JS ile açılınca göster */
+    }
+    
+    nav ul {
         flex-direction: column;
+        align-items: center;
+    }
+    
+    .navbar-container nav li {
+        margin: 5px 0;
+        width: 100%;
         text-align: center;
     }
-
-    .navbar-container nav ul {
-        flex-direction: column;
-        align-items: center; /* Menü ortalanmasın */
-        margin-top: 10px;
-    }
-
-    .navbar-container nav li {
-        margin: 8px 0;
-    }
-
-    .navbar-container nav a {
-        font-size: 18px; /* Mobilde daha okunaklı olsun */
-    }
 }
+
+
+
