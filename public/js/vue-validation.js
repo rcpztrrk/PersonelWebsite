@@ -21,8 +21,8 @@ const app = Vue.createApp({
                 this.errors.push("Geçerli bir e-posta adresi girin! (.com, .edu, .net, .org, .gov veya .tr ile bitmeli)");
             }
             
-            if (!this.phone.match(/^\d{12}$/)) {
-                this.errors.push("Telefon numarası 12 haneli ve sadece rakamlardan oluşmalıdır!");
+            if (!this.phone.match(/^\d{11}$/)) {
+                this.errors.push("Telefon numarası 11 haneli ve sadece rakamlardan oluşmalıdır!");
             }
             if (!this.gender) this.errors.push("Cinsiyet seçmelisiniz!");
             if (!this.subject) this.errors.push("Konu seçmelisiniz!");

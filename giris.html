@@ -52,37 +52,53 @@
 
     <script>
         function validateForm() {
-            let isValid = true;
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value.trim();
-            
-            // Kullanıcı adı kontrolü
-            if (username === '') {
-                document.getElementById('usernameError').textContent = 'Kullanıcı adı boş bırakılamaz';
-                isValid = false;
-            } else if (!isValidEmail(username)) {
-                document.getElementById('usernameError').textContent = 'Geçerli bir Sakarya Üniversitesi email adresi giriniz';
-                isValid = false;
-            } else {
-                document.getElementById('usernameError').textContent = '';
-            }
-            
-            // Şifre kontrolü
-            if (password === '') {
-                document.getElementById('passwordError').textContent = 'Şifre boş bırakılamaz';
-                isValid = false;
-            } else {
-                document.getElementById('passwordError').textContent = '';
-            }
-            
-            return isValid;
-        }
+    let isValid = true;
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const errorMessage = document.getElementById('errorMessage'); // Bu elementi HTML'e eklemelisiniz
+    
+    // Kullanıcı adı kontrolü
+    if (username === '') {
+        document.getElementById('usernameError').textContent = 'Kullanıcı adı boş bırakılamaz';
+        isValid = false;
+    } else if (!isValidEmail(username)) {
+        document.getElementById('usernameError').textContent = 'Geçerli bir Sakarya Üniversitesi email adresi giriniz';
+        isValid = false;
+    } else {
+        document.getElementById('usernameError').textContent = '';
+    }
+    
+    // Şifre kontrolü
+    if (password === '') {
+        document.getElementById('passwordError').textContent = 'Şifre boş bırakılamaz';
+        isValid = false;
+    } else {
+        document.getElementById('passwordError').textContent = '';
+    }
+    
+    // Eğer format doğruysa ama kullanıcı adı/şifre yanlışsa
+    if (isValid) {
+        // Burada gerçek bir doğrulama yapılmalı (sunucu tarafı veya önceden tanımlı değerler)
+        const validUsername = "b2112100000@sakarya.edu.tr"; // Örnek kullanıcı adı
+        const validPassword = "b2112100000"; // Örnek şifre
         
-        function isValidEmail(email) {
-            const regex = /^[a-zA-Z][0-9]{10}@sakarya\.edu\.tr$/;
-            return regex.test(email);
+        if (username !== validUsername || password !== validPassword) {
+            errorMessage.textContent = 'Kullanıcı adı veya şifre hatalı!';
+            errorMessage.style.color = 'red';
+            errorMessage.style.display = 'block';
+            isValid = false;
+        } else {
+            errorMessage.style.display = 'none';
         }
+    }
+    
+    return isValid;
+}
 
+function isValidEmail(email) {
+    const regex = /^[a-zA-Z][0-9]{10}@sakarya\.edu\.tr$/;
+    return regex.test(email);
+}
         // Sayfa yüklendiğinde aktif menü öğesini ayarla
 document.addEventListener('DOMContentLoaded', function() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';

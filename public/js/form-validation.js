@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 errors.push("Geçerli bir e-posta adresi girin! (.com, .edu, .net, .org, .gov veya .tr ile bitmeli)");
             }
 
-           if (!/^\d{12}$/.test(phone)) {
-                errors.push("Telefon numarası 12 haneli ve sadece rakamlardan oluşmalıdır!");
+           if (!/^\d{11}$/.test(phone)) {
+                errors.push("Telefon numarası 11 haneli ve sadece rakamlardan oluşmalıdır!");
             }
             if (!gender) errors.push("Cinsiyet seçmelisiniz!");
 
