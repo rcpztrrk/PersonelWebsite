@@ -61,6 +61,9 @@
     <label for="message">Mesajınız:</label>
     <textarea id="message" name="message" v-model="message" required></textarea>
 
+     <label for="file">Dosya Yükle:</label>
+    <input type="file" action="upload.php" id="file" name="file" accept=".jpg, .png, .pdf">
+
     <div class="buttons">
        <button type="button" id="validateJS">JavaScript ile Kontrol</button>
         <button type="button" @click="validateForm">Vue.js ile Kontrol</button>
@@ -74,6 +77,7 @@
  <script src="public/js/form-validation.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@3"></script> 
 <script src="public/js/vue-validation.js"></script> 
+
 <script>
 
     

@@ -12,17 +12,36 @@
     <p><strong>Telefon:</strong> <span id="phone"></span></p>
     <p><strong>Konu:</strong> <span id="subject"></span></p>
     <p><strong>Cinsiyet:</strong> <span id="gender"></span></p>
+    <p><strong>Dosya:</strong> <span id="file"></span></p>
     <p><strong>Mesaj:</strong></p>
     <p id="message"></p>
+    
+    <div id="filePreview"></div>
 
     <script>
         let params = new URLSearchParams(window.location.search);
-        document.getElementById("name").innerText = params.get("name");
-        document.getElementById("email").innerText = params.get("email");
-        document.getElementById("phone").innerText = params.get("phone");
-        document.getElementById("subject").innerText = params.get("subject");
-        document.getElementById("gender").innerText = params.get("gender");
-        document.getElementById("message").innerText = params.get("message");
+        document.getElementById("name").innerText = params.get("name") || "Belirtilmemiş";
+        document.getElementById("email").innerText = params.get("email") || "Belirtilmemiş";
+        document.getElementById("phone").innerText = params.get("phone") || "Belirtilmemiş";
+        document.getElementById("subject").innerText = params.get("subject") || "Belirtilmemiş";
+        document.getElementById("gender").innerText = params.get("gender") || "Belirtilmemiş";
+        document.getElementById("message").innerText = params.get("message") || "Belirtilmemiş";
+        
+        let fileName = params.get("file");
+        document.getElementById("file").innerText = fileName || "Dosya yüklenmedi";
+        
+        if (fileName) {
+            let fileExt = fileName.split('.').pop().toLowerCase();
+            if (["jpg", "png", "jpeg"].includes(fileExt)) {
+                document.getElementById("filePreview").innerHTML = 
+                    `<img src="uploads/${fileName}" alt="Yüklenen Dosya" style="max-width:100%; height:auto;">`;
+            } else if (fileExt === "pdf") {
+                document.getElementById("filePreview").innerHTML = 
+                    `<embed src="uploads/${fileName}" type="application/pdf" width="100%" height="600px">`;
+            } else {
+                document.getElementById("filePreview").innerText = "Dosya görüntülenemiyor.";
+            }
+        }
     </script>
 </body>
 </html>

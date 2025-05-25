@@ -6,7 +6,7 @@ const app = Vue.createApp({
             phone: '',
             message: '',
             gender: '',
-            subject: '', // Bu satırı ekledik!
+            subject: '',
             errors: []
         };
     },
@@ -15,14 +15,17 @@ const app = Vue.createApp({
             this.errors = [];
 
             if (!this.name) this.errors.push("Ad Soyad boş bırakılamaz!");
-            if (!this.email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
-                this.errors.push("Geçerli bir e-posta adresi girin!");
+            
+            // Güncellenmiş e-posta kontrolü (.com, .edu, .net, .org, .gov, .tr ile bitmeli)
+            if (!this.email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|edu|net|org|gov|tr)$/i)) {
+                this.errors.push("Geçerli bir e-posta adresi girin! (.com, .edu, .net, .org, .gov veya .tr ile bitmeli)");
             }
-            if (!this.phone.match(/^\d+$/)) {
-                this.errors.push("Telefon numarası sadece rakamlardan oluşmalıdır!");
+            
+            if (!this.phone.match(/^\d{12}$/)) {
+                this.errors.push("Telefon numarası 12 haneli ve sadece rakamlardan oluşmalıdır!");
             }
             if (!this.gender) this.errors.push("Cinsiyet seçmelisiniz!");
-            if (!this.subject) this.errors.push("Konu seçmelisiniz!"); // Yeni kontrol ekledik
+            if (!this.subject) this.errors.push("Konu seçmelisiniz!");
             if (!this.message) this.errors.push("Mesaj bölümü boş bırakılamaz!");
 
             if (this.errors.length > 0) {

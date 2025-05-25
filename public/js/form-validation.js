@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const validateButton = document.getElementById("validateJS");
-    if (validateButton) { // Butonun varlığını kontrol et
+    if (validateButton) {
         validateButton.addEventListener("click", function () {
             const name = document.getElementById("name").value.trim();
             const email = document.getElementById("email").value.trim();
@@ -12,11 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (!name) errors.push("Ad Soyad boş bırakılamaz!");
             
-            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            if (!email.match(emailPattern)) errors.push("Geçerli bir e-posta adresi girin!");
+            // Güncellenmiş e-posta kontrolü
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|edu|net|org|gov|tr)$/i;
+            if (!email.match(emailPattern)) {
+                errors.push("Geçerli bir e-posta adresi girin! (.com, .edu, .net, .org, .gov veya .tr ile bitmeli)");
+            }
 
-            if (!/^\d+$/.test(phone)) errors.push("Telefon numarası sadece rakamlardan oluşmalıdır!");
-
+           if (!/^\d{12}$/.test(phone)) {
+                errors.push("Telefon numarası 12 haneli ve sadece rakamlardan oluşmalıdır!");
+            }
             if (!gender) errors.push("Cinsiyet seçmelisiniz!");
 
             if (!message) errors.push("Mesaj bölümü boş bırakılamaz!");
