@@ -35,3 +35,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// E-posta validasyon fonksiyonu
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+// Form gönderimini kontrol et
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    const email = document.getElementById('email').value;
+    
+    if (!validateEmail(email)) {
+        alert('Lütfen geçerli bir e-posta adresi giriniz (örnek: ornek@site.com)');
+        e.preventDefault(); // Form gönderimini engelle
+    }
+    
+    // Diğer validasyon kontrolleri buraya eklenebilir
+});
+
+// JavaScript ile Kontrol butonu için
+document.getElementById('validateJS').addEventListener('click', function() {
+    const email = document.getElementById('email').value;
+    
+    if (!validateEmail(email)) {
+        alert('JavaScript: Geçersiz e-posta formatı!');
+    } else {
+        alert('JavaScript: E-posta geçerli!');
+    }
+});
